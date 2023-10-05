@@ -26,8 +26,8 @@ class TextSizeActivity : AppCompatActivity() {
         with (findViewById(R.id.textSizeSelectorRecyclerView) as RecyclerView) {
             val callback ={
                     fontsize : Int->
-                launchIntent.putExtra("Textsize",fontsize.toFloat())
-                startActivity(launchIntent)
+                setResult(RESULT_OK, Intent().putExtra("Textsize",fontsize.toFloat()))
+                finish()
             }
 
             // TODO Step 2: Pass selected value back to activity that launched TextSizeActivity
